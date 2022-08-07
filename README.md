@@ -1,39 +1,7 @@
-[![Sensu Bonsai Asset](https://img.shields.io/badge/Bonsai-Download%20Me-brightgreen.svg?colorB=89C967&logo=sensu)](https://bonsai.sensu.io/assets/jadiunr/check-cpu-time)
-![Go Test](https://github.com/jadiunr/check-cpu-time/workflows/Go%20Test/badge.svg)
-![goreleaser](https://github.com/jadiunr/check-cpu-time/workflows/goreleaser/badge.svg)
-
-# Check Plugin Template
-
-## Overview
-check-plugin-template is a template repository which wraps the [Sensu Plugin SDK][2].
-To use this project as a template, click the "Use this template" button from the main project page.
-Once the repository is created from this template, you can use the [Sensu Plugin Tool][9] to
-populate the templated fields with the proper values.
-
-## Functionality
-
-After successfully creating a project from this template, update the `Config` struct with any
-configuration options for the plugin, map those values as plugin options in the variable `options`,
-and customize the `checkArgs` and `executeCheck` functions in [main.go][7].
-
-When writing or updating a plugin's README from this template, review the Sensu Community
-[plugin README style guide][3] for content suggestions and guidance. Remove everything
-prior to `# Sensu CPU time check` from the generated README file, and add additional context about the
-plugin per the style guide.
-
-## Releases with Github Actions
-
-To release a version of your project, simply tag the target sha with a semver release without a `v`
-prefix (ex. `1.0.0`). This will trigger the [GitHub action][5] workflow to [build and release][4]
-the plugin with goreleaser. Register the asset with [Bonsai][8] to share it with the community!
-
-***
-
 # Sensu CPU time check
 
 ## Table of Contents
 - [Overview](#overview)
-- [Files](#files)
 - [Usage examples](#usage-examples)
 - [Configuration](#configuration)
   - [Asset registration](#asset-registration)
@@ -44,11 +12,27 @@ the plugin with goreleaser. Register the asset with [Bonsai][8] to share it with
 
 ## Overview
 
-The Sensu CPU time check is a [Sensu Check][6] that ...
-
-## Files
+The Sensu CPU time check is a [Sensu Check][6] that reports cpu time.
 
 ## Usage examples
+
+```
+Check CPU time
+
+Usage:
+  check-cpu-time [flags]
+  check-cpu-time [command]
+
+Available Commands:
+  completion  Generate the autocompletion script for the specified shell
+  help        Help about any command
+  version     Print the version number of this plugin
+
+Flags:
+  -h, --help   help for check-cpu-time
+
+Use "check-cpu-time [command] --help" for more information about a command.
+```
 
 <details>
 <summary>Check output</summary>
@@ -247,7 +231,7 @@ metadata:
   name: check-cpu-time
   namespace: default
 spec:
-  command: check-cpu-time --example example_arg
+  command: check-cpu-time
   subscriptions:
   - system
   runtime_assets:

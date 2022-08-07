@@ -52,8 +52,8 @@ func (g *MetricGroup) Output() {
 var (
 	plugin = Config{
 		PluginConfig: sensu.PluginConfig{
-			Name:     "check-cpu-usage-extended",
-			Short:    "Check CPU usage in more detail.",
+			Name:     "check-cpu-time",
+			Short:    "Check CPU time",
 			Keyspace: "sensu.io/plugins/check-cpu-usage-extended/config",
 		},
 	}
